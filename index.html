@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Zera AI Interface</title>
+</head>
+<body>
+    <div class="scan-overlay" id="scanOverlay">
+        <div class="scan-content">
+            <img src="/face-scan.gif" alt="Scanning" class="scan-animation">
+            <div class="scan-text">
+                <div class="scan-status">INITIATING NEURAL SCAN</div>
+                <div class="scan-progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="scan-details">
+                    ANALYZING NEURAL PATTERNS...
+                    <span class="blink">_</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-background">
+        <video autoplay muted loop id="agentVideo">
+            <source src="/agent.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="/sound.mp3" type="audio/mp3">
+    </audio>
+    
+    <div class="overlay"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="eye-icon">◉</span> ZERA AI
+                <span class="version">v1.0.0_alpha</span>
+            </div>
+            <div class="header-controls">
+                <button id="musicToggle" class="control-btn">
+                    <span class="sound-icon">♪</span>
+                </button>
+                <nav>
+                    <a href="#" class="nav-icon">
+                        <img src="/pump.PNG" alt="Protocol" class="nav-logo">
+                    </a>
+                    <a href="#" class="nav-icon">
+                        <img src="/X.PNG" alt="Matrix" class="nav-logo">
+                    </a>
+                    <a href="#" class="nav-icon">
+                        <img src="/Telegram.PNG" alt="Neural Map" class="nav-logo">
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="main-grid">
+            <div class="panel sentiment-panel">
+                <h3>NEURAL ACTIVITY</h3>
+                <div class="neural-video-container">
+                    <video autoplay muted loop id="brainVideo" playsinline>
+                        <source src="/brain.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="panel process-panel">
+                <h3>PROCESSES</h3>
+                <div class="heatmap-container">
+                    <video autoplay muted loop id="heatmapVideo" playsinline>
+                        <source src="/heatmap.mp4" type="video/mp4">
+                    </video>
+                    <div class="detection-status">
+                        <span class="detection-dot"></span>
+                        HEATMAP DETECTION: PERSON DETECTED
+                    </div>
+                </div>
+            </div>
+
+            <div class="terminal-panel">
+                <div class="terminal-header">
+                    <span class="status">SYSTEM READY</span>
+                    <span class="indicators">
+                        <span class="dot green"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot red"></span>
+                    </span>
+                </div>
+                <div class="terminal-content" id="terminal">
+                    <div class="output">Zera AI  initialized. Enter 'help' for commands.</div>
+                    <div class="input-line">
+                        <span class="prompt">&gt;</span>
+                        <input type="text" id="terminal-input" autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

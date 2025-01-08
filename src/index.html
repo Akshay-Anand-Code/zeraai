@@ -1,0 +1,69 @@
+cat > src/index.html << 'EOL'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Interface</title>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="agentVideo">
+            <source src="/agent.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="overlay"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="eye-icon">◉</span> NEURAL.OS
+                <span class="version">v1.0.0_alpha</span>
+            </div>
+            <nav>
+                <a href="#">Protocol</a>
+                <a href="#">Matrix</a>
+                <a href="#">Neural Map</a>
+                <a href="#">Decrypt</a>
+            </nav>
+        </header>
+
+        <div class="main-grid">
+            <div class="panel sentiment-panel">
+                <h3>NEURAL ACTIVITY</h3>
+                <canvas id="waveform"></canvas>
+            </div>
+
+            <div class="panel process-panel">
+                <h3>PROCESSES</h3>
+                <div class="process-list">
+                    <div class="process">Initializing neural pathways...</div>
+                    <div class="process">Analyzing input patterns...</div>
+                    <div class="process">Accessing knowledge matrix...</div>
+                </div>
+            </div>
+
+            <div class="terminal-panel">
+                <div class="terminal-header">
+                    <span class="status">SYSTEM READY</span>
+                    <span class="indicators">
+                        <span class="dot green"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot red"></span>
+                    </span>
+                </div>
+                <div class="terminal-content" id="terminal">
+                    <div class="output">Zera AI initialized. Enter 'help' for commands.</div>
+                    <div class="input-line">
+                        <span class="prompt">&gt;</span>
+                        <input type="text" id="terminal-input" autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
+EOL
