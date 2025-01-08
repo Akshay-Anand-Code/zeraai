@@ -46,9 +46,9 @@ export class Terminal {
                 this.printOutput('Exiting chat mode...');
             } else {
                 try {
-                    this.printOutput('AETHER: Analyzing input patterns...');
+                    this.printOutput('Zera: Analyzing input patterns...');
                     const response = await getChatResponse(command);
-                    this.printOutput(`AETHER: ${response}`);
+                    this.printOutput(`Zera: ${response}`);
                 } catch (error) {
                     this.printOutput(`ERROR: ${error.message}`);
                     if (error.message.includes('API key')) {

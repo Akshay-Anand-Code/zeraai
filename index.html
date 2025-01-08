@@ -36,9 +36,12 @@
     
     <div class="container">
         <header>
-            <div class="logo">
-                <span class="eye-icon">◉</span> ZERA AI
-                <span class="version">v1.0.0_alpha</span>
+            <div class="logo-section">
+                <div class="logo">
+                    <span class="eye-icon">◉</span> ZERA AI
+                    <span class="version">v1.0.0_alpha</span>
+                </div>
+                <button class="protocol-btn" id="addAgentBtn">ADD YOUR AI AGENT</button>
             </div>
             <div class="header-controls">
                 <button id="musicToggle" class="control-btn">
@@ -100,6 +103,32 @@
             </div>
         </div>
     </div>
+
+    <div id="agentModal" class="modal">
+        <div class="modal-content">
+            <h2>ADD YOUR AI AGENT</h2>
+            <div class="input-group">
+                <label>Agent Name</label>
+                <input type="text" id="agentName" placeholder="Enter agent name">
+            </div>
+            <div class="input-group">
+                <label>API Key</label>
+                <input type="password" id="apiKey" placeholder="Enter your API key">
+            </div>
+            <div class="input-group">
+                <label>Model</label>
+                <select id="modelSelect">
+                    <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                    <option value="gpt-4">GPT-4</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button class="cancel-btn">CANCEL</button>
+                <button class="coming-soon-btn">COMING SOON</button>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
 </body>
 </html>

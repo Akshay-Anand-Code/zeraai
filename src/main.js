@@ -73,8 +73,34 @@ function setupAudio() {
     }, { once: true });
 }
 
+function setupModal() {
+    const modal = document.getElementById('agentModal');
+    const addAgentBtn = document.getElementById('addAgentBtn');
+    const comingSoonBtn = document.querySelector('.coming-soon-btn');
+    const cancelBtn = document.querySelector('.cancel-btn');
+
+    addAgentBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+    comingSoonBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     await simulateScan()
     initializeInterface()
     setupAudio()
+    setupModal()
 })
