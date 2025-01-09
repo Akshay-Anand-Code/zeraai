@@ -688,3 +688,121 @@ nav {
     margin-bottom: 20px;
     text-shadow: 0 0 10px var(--neon-green);
 }
+
+/* Base container adjustments */
+.container {
+    padding: 15px 20px;
+}
+
+/* Media queries for mobile devices */
+@media screen and (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    /* Grid layout adjustment */
+    .main-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px 250px auto;
+        gap: 15px;
+    }
+
+    /* Panel adjustments */
+    .panel {
+        padding: 15px;
+    }
+
+    .panel h3 {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+
+    /* Video containers */
+    .neural-video-container,
+    .heatmap-container {
+        top: 45px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    /* Terminal adjustments */
+    .terminal-panel {
+        min-height: 180px;
+        max-height: 300px;
+    }
+
+    .terminal-content {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        width: 90%;
+        min-width: unset;
+        padding: 20px;
+        margin: 0 15px;
+    }
+
+    .input-group input,
+    .input-group select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Navigation icons */
+    .nav-icon {
+        width: 30px;
+        height: 30px;
+        padding: 6px;
+    }
+
+    /* Button adjustments */
+    .protocol-btn {
+        font-size: 0.75em;
+        padding: 5px 10px;
+    }
+
+    .button-group {
+        gap: 10px;
+    }
+
+    .cancel-btn,
+    .coming-soon-btn {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 380px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .header-controls {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .terminal-content {
+        font-size: 0.85em;
+    }
+}

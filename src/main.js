@@ -47,30 +47,45 @@ function simulateScan() {
 function setupAudio() {
     const music = document.getElementById('bgMusic');
     const musicToggle = document.getElementById('musicToggle');
-    let isPlaying = false;
+    let isPlaying = true;
 
     // Set initial volume
     music.volume = 0.3;
 
+    // Add muted class initially to show correct icon state
+    musicToggle.classList.remove('muted');
+
+    // Try to play immediately
+    const playPromise = music.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            // Auto-play was prevented
+            // Show user a message or button to manually start
+            isPlaying = false;
+            musicToggle.classList.add('muted');
+            
+            // Add one-time click handler to start music
+            document.addEventListener('click', () => {
+                if (!isPlaying) {
+                    music.play();
+                    musicToggle.classList.remove('muted');
+                    isPlaying = true;
+                }
+            }, { once: true });
+        });
+    }
+
     musicToggle.addEventListener('click', () => {
-        if (!isPlaying) {
-            music.play();
-            musicToggle.classList.remove('muted');
-        } else {
+        if (isPlaying) {
             music.pause();
             musicToggle.classList.add('muted');
+        } else {
+            music.play();
+            musicToggle.classList.remove('muted');
         }
         isPlaying = !isPlaying;
     });
-
-    // Auto-play handling (optional)
-    document.addEventListener('click', () => {
-        if (!isPlaying) {
-            music.play();
-            musicToggle.classList.remove('muted');
-            isPlaying = true;
-        }
-    }, { once: true });
 }
 
 function setupModal() {
